@@ -97,7 +97,7 @@ def initialize_session_state() -> None:
             st.session_state[key] = default_value
 
 def get_api_key() -> str:
-    return os.getenv("API_KEY", "")
+    return st.secrets["API_KEY"]
 
 def validate_api_key(api_key: str) -> bool:
     if not api_key:
@@ -358,4 +358,5 @@ Guidelines:
 # =========================================================================
 
 if __name__ == "__main__":
+
     main()
