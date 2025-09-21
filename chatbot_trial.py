@@ -269,8 +269,10 @@ def main():
     render_header()
     
     # Get API key from environment
-    api_key = get_api_key()
     
+    api_key = get_api_key()
+    st.sidebar.write(f"🔍 API key loaded: {api_key[:8]}...")
+
     # Check if API key is available and valid
     if not api_key or not validate_api_key(api_key):
         st.error("🔑 API key not found or invalid. Please ensure API_KEY is set in your environment variables.")
@@ -358,4 +360,5 @@ Guidelines:
 if __name__ == "__main__":
 
     main()
+
 
